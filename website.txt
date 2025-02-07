@@ -33,7 +33,7 @@ An article was published in the MDW Atlas project that you can read here:
 
 This is a solar server that runs from my house and takes data measured at Dirt Wain, a composting company in Fort Wayne, IN, to generate online art pieces.
 [Thoughts]
-#Playdate/Mobile Textgame Engine Ideas - 2/7/25
+#Playdate/Mobile Textgame Engine Ideas - 2/7/25#
 I've been pondering a way to build a simple textbased game engine that has many limitations on gameplay so that it is relatively easy to write with as a game writer, or even just someone curious in making games and wants to start with something simple but engaging. It is heavily inspired by the Bitsy gamemaker. Initially, I imagined it as being a text input type of engine like a lot of classic text adventures and MUD interfaces, but now I'm thinking about something entirely different...
 
 By imagining how a text adventure would be doable on a console like the Playdate that is awkard for text input, I was imagining a system where the player can only "press on". Rather than moving around in the world and interacting by typing text, they would crank the console's crank input to move forward, and maybe use the d-pad and buttons to select "selectable" text on screen to interact with items, characters, and possibly dialogue options.
