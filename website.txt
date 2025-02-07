@@ -33,6 +33,16 @@ An article was published in the MDW Atlas project that you can read here:
 
 This is a solar server that runs from my house and takes data measured at Dirt Wain, a composting company in Fort Wayne, IN, to generate online art pieces.
 [Thoughts]
+#Playdate/Mobile Textgame Engine Ideas - 2/7/25
+I've been pondering a way to build a simple textbased game engine that has many limitations on gameplay so that it is relatively easy to write with as a game writer, or even just someone curious in making games and wants to start with something simple but engaging. It is heavily inspired by the Bitsy gamemaker. Initially, I imagined it as being a text input type of engine like a lot of classic text adventures and MUD interfaces, but now I'm thinking about something entirely different...
+
+By imagining how a text adventure would be doable on a console like the Playdate that is awkard for text input, I was imagining a system where the player can only "press on". Rather than moving around in the world and interacting by typing text, they would crank the console's crank input to move forward, and maybe use the d-pad and buttons to select "selectable" text on screen to interact with items, characters, and possibly dialogue options.
+
+With these limitations, how would a player move through the world? My idea is that, much like in a game of D&D, the player would select a "drive" which is a goal that they would like to achieve. This could be to a drive to "explore the woods." In this scenario, the player would select from a list of drives the thing they'd like to pursue, and then from then on they crank the crank to roll the dice on how they progress in achieving that goal. In this way, creating a world for the gamemaker is less about creating a map of a world and intricate details, the gamemaker only has to consider the world as far as the player would interact with it based on these drives. Using the same system, the player could just as easily be working on a drive to "make a potion." In this circumstance the player would crank the crank and roll the dice on various stages of the potion brewing process. According to the game's engine, exploring a location and brewing a potion is the same thing.
+
+With this example above, I could develop a simple character system where skills can be developed and leveled up to help with certain types of progression dice rolls, and develop a simple inventory system. Even if I started out with no dialogue options, this could be the start to a fairly compelling adventure engine built on very little architecture.
+
+Now, imagine this system on a mobile phone. Instead of using the crank to progress, the player could simply swipe the screen down (like the usual way to refresh a page in today's common mobile design pracices) to progress their current drive, and select selectables via the touchscreen. I should look into how possible it is to run lua or C in browser so that I can determine if I could write the engine's codebase in one of those for both the Playdate and Mobile at the same time.
 #Inland Empire - 1/25/25#
 So, tonight I watched Inland Empire for the first time and truly experienced pure cinema. It sounds hilarious and hyperbolic to say out loud, but it's really how I'm feeling.
 
