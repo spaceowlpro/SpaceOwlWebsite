@@ -89,10 +89,19 @@ function randomLetter()
     return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
 }
 
+const sound = [ new Audio('Static2.wav'), new Audio('Static3.wav'), new Audio('Static4.wav') ];
+
 function degaussScreen()
 {
-        preElement = document.querySelector('pre')
-        preElement.classList.remove("animate");
-        void preElement.offsetWidth;
-        preElement.classList.add("animate");
+    preElement = document.querySelector('pre')
+    preElement.classList.remove("animate");
+    void preElement.offsetWidth;
+    preElement.classList.add("animate");
+    degaussSound();
+}
+
+
+function degaussSound()
+{
+    sound[Math.floor(Math.random() * 3)].play();
 }
