@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color: rgb(0, 0, 0); overflow-x: hidden;">
+    <head>
+        <title>Deal With The Devil</title>
+    </head>
+    <body style="color: aliceblue;">
+        <color id="colorAdd"></color>
+        <img src="hut.png" alt="witch's hut" id="hut">
+        <pre id="words"></pre>
+    </body>
+    <script src="simulation.js"></script>
+    <script>
+        let story = [
+            "Horrified, you tap the enter button and the script reacts to your input.",
+            printSimulationScript(),
+            "You wipe them away and see a script.",
+            "The green light emitting from the computer’s screen glares off of your tears as you come to face it.",
+            "You notice tears are streaming from your eyes as you make out an old computer sitting on a desk in the middle of the otherwise empty hut.",
+            "You eventually reach the tattered old hut. Pushing the door open, the sounds behind you hush.",
+            "Throb.",
+            "Step.",
+            "Throb.",
+            "Step.",
+            "With each step forward, your heart pounds in equal measure.",
+            "Moving forward, surrounded by this cacophony of cries, you see it. A hut. The path ahead flows right to its door.",
+            "“It hasn’t happened yet, Grandpa. I still have a choice in this,” you say. Out loud this time. Your voice bounces through the trees and scatters off of rock faces, decaying slowly over time. As you walk, scattered echoes of your words bounce around and grow back from the silence. Waves of these echoes rise and fall, clashing with the continuing frog chorus.",
+            "Slowly, you walk this new path. You don’t even have to look at your GPS to know that this path ends not far from here with a little map pin labeled Davil.",
+            "You turn around suddenly, expecting to see your Grandpa standing where his voice came from, but instead see that the path behind you has straightened.",
+            "“How could you let this happen?”",
+            "“What could possibly be worth that cost,” he might ask you. The path on the GPS continues to stretch on. “Our reliance on AI has hindered our ability to innovate as we once did, and it…” A rock in the path catches your right foot and you start to stumble. You catch your balance and stand for a moment, looking up through the treetops. You shift your eyes down to the path, and the rocks, and the tree trunks. You wonder about the security implications that would need to be considered. “Can the AI take over the mind? Can our minds wander too far into its maze,” you ask yourself.",
+            "Your GPS HUD flickers back to life with a path blossoming forward, directing you walk. It meanders left and right and left again before overflowing the HUD space, so you follow it. As you walk, you hear unrecognizable bird calls, and wonder if your Grandpa could identify them if he were here. You wonder what he would think about all of this. You would explain to him that by connecting AI to our brain, we can more directly collaborate with it. We could continue to learn from it like our children do in schools, but it could have an unfettered look into how we think.",
+            "The hatch lifts, and dread blows through the woods like a harsh wind, cyclones violently into your nostrils, and fills your mind until tears and snot burst from your face. Staggering over to the nearest bench, you fumble for your hand-kerchief and desperately weep into it for several minutes. As your weeping subsides, your ears are filled with the sound of frog calls, their chorus rising and falling around you in waves. It must be peak mating season. You glance around in a daze, ready to offer an apology to anyone nearby who may have been subjected to your outburst, but the platform is completely deserted as the train makes its way to the underground turnaround.",
+            "A quiet voice murmurs into your ear, interrupting your line of thinking. “Last stop. Outer Woods Station. Please collect your things and prepare for your exit,” it crackles as the message struggles to reach you from the train’s wireless transmitter. You close your eyes and breathe deeply before standing up and exiting your roomette. You slide the door open to quiet air. No-one else stirs in the hall leading to the car’s exit hatch. The train slows to a halt and you are mesmerized by the parallaxing layers of forest slowing in staggered sequence until all is still. The stage is set for your departure.",
+            "“But that’s exactly why we should do this,” you think. This is an inevitable move for technology. Humanity is safe if this is under your watch and control. You scroll through cover photos and think pieces lauding your company as the one who did it right. “We’ve created the most humane AI infrastructure and connected it to the world’s devices with the safest protocols in existence,” you reassure yourself. “In lesser hands…”",
+            "“Where even is this place,” you wonder as you notice your GPS HUD has gone black. Just a moment after that thought, light bursts through the window as the train emerges from the tunnel. Your breath seizes up with the sight of trees blurring by. Childhood memories flood back to you about your trips to the Outer Woods with your Grandpa to go mushroom hunting. Thinking about mycelium, and how trees tap into its web to communicate with each other… Infected mycelium have recently made it difficult for sick trees to warn others of spreading disease. You can’t help but compare it to this decision you face. When you tamper with these connections, you’re affecting more people than you can possibly imagine.",
+            "Yay or nay, you still don’t know what you’ll say when you reach this secret meeting place with Davil, but the thought of what your tech could do when combined propels you forward.",
+            "Normally, this would be a months-long discussion with your company team, but you and those at Davil Corp are convinced that this should be a secret deal between you and them. Merely a whisper about even considering this type of experimentation with your company’s technology would send ripples of distrust throughout its developer teams.",
+            "Trying desperately to remember the last time you did so, you’re sitting on the train outbound from the city. As the train tunnels underground, the solar sensitive lights wax to accommodate your vision inside the room on the train car. The quiet hum of the train reverberating through the tunnel focuses your mind back to the conundrum you find yourself in. To make this deal with Davil, or not.",
+        ];
+                
+        tellStory("", story.length - 1);
+        //listenForEscapeCode();
+
+        async function tellStory(storySoFar, chapter){
+            storySoFar = storySoFar + story[chapter] + '\n\n';
+            renderSimulation(storySoFar);
+
+            if(chapter > -1){
+                await Davils_Handshake_Protocol();
+                tellStory(storySoFar, chapter - 1);
+            }
+            else
+            {
+                tellStory("", story.length - 1);
+            }
+        }
+
+        function Davils_Handshake_Protocol() {
+            return new Promise((accept) => {
+                davilCommunication('open', keyboardInput);
+                function keyboardInput(key) {
+                    if (key.key === 'Enter') {
+                        accept();
+                        davilCommunication('close', keyboardInput);
+                    }
+                }
+            });
+        }
+
+    </script>
+    <style>
+    #colorAdd
+    {
+        display: block;
+        position: absolute;
+
+        min-width: 100%;
+        min-height: 100%;
+
+        resize: vertical;
+        overflow: auto;
+
+        background-color: hsl(120, 40%, 2%);
+        mix-blend-mode: darken;
+        z-index: 2;
+    }
+    #words
+    {
+        position: relative; 
+        z-index: 20; 
+        font-size:x-large; 
+        margin-left: 50px; 
+        margin-right: 50px; 
+        white-space: pre-wrap;
+        font-family: "Roboto Mono Bold Italic";
+        color: hsl(115, 50%, 43%);
+    }
+    .animate
+    {
+        animation-name: reveal;
+        animation-duration: 2s;
+    }
+    #hut
+    {
+        width: 50vw; 
+        display: block;
+        position:;
+        margin-left: auto; 
+        margin-right: auto;
+    }
+    @keyframes reveal {
+        from {text-shadow: 0px 0px 25px hsl(115, 50%, 43%);}
+        to {text-shadow: 0px 0px 5 hsl(115, 50%, 43%);}
+    }
+
+    @font-face {
+        font-family: "Roboto Mono Bold Italic";
+        src: url("https://db.onlinewebfonts.com/t/ae1cf8b7f9be2aee8ba2a6647d18dcb1.eot");
+        src: url("https://db.onlinewebfonts.com/t/ae1cf8b7f9be2aee8ba2a6647d18dcb1.eot?#iefix")format("embedded-opentype"),
+        url("https://db.onlinewebfonts.com/t/ae1cf8b7f9be2aee8ba2a6647d18dcb1.woff2")format("woff2"),
+        url("https://db.onlinewebfonts.com/t/ae1cf8b7f9be2aee8ba2a6647d18dcb1.woff")format("woff"),
+        url("https://db.onlinewebfonts.com/t/ae1cf8b7f9be2aee8ba2a6647d18dcb1.ttf")format("truetype"),
+        url("https://db.onlinewebfonts.com/t/ae1cf8b7f9be2aee8ba2a6647d18dcb1.svg#Roboto Mono Bold Italic")format("svg");
+    }
+    </style>
+</html>
