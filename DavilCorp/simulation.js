@@ -1,9 +1,7 @@
 function renderSimulation(text)
 {
-    if (audioContext == null) { audioContext = new AudioContext(); audioBuffer = audioContext.createBufferSource(); audioBuffer.connect(audioContext.destination); }
     preElement = document.querySelector('pre')
     preElement.innerText = text;
-    renderStoryAudio(text);
 
     window.scroll(0,10000000)
     degaussScreen();
