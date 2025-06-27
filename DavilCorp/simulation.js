@@ -105,6 +105,7 @@ function degaussScreen()
 
 function degaussSound()
 {
+<<<<<<< HEAD
     const newSound = sound[Math.floor(Math.random() * 3)];
     newSound.load();
     newSound.play();
@@ -135,3 +136,7 @@ async function loadAndLoopAudio(url) {
     source.connect(audioContext.destination);
     source.start();
 }
+=======
+    sound[Math.floor(Math.random() * 3)].play();
+}
+>>>>>>> parent of d3cb659 (Davil Corp Fixed Audio Oneshot bug)
