@@ -103,5 +103,7 @@ function degaussScreen()
 
 function degaussSound()
 {
-    sound[Math.floor(Math.random() * 3)].play();
+    const newSound = sound[Math.floor(Math.random() * 3)];
+    newSound.load();
+    newSound.play();
 }
