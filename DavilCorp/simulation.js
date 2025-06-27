@@ -9,7 +9,7 @@ function renderSimulation(text)
 
 function printSimulationScript()
 {
-    return document.getElementsByTagName("script")[2].innerHTML;
+    return document.getElementsByTagName("script")[1].innerHTML;
 }
 
 function davilCommunication(status, userInput, mouseInput)
