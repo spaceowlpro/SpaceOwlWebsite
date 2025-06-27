@@ -17,12 +17,12 @@ function davilCommunication(status, userInput, mouseInput)
     if(status == 'open')
     {
         document.addEventListener('keydown', userInput);
-        document.addEventListener('mousedown', mouseInput);
+        document.addEventListener('click', mouseInput);
     }
     else if(status == 'close')
     {
         document.removeEventListener('keydown', userInput);
-        document.addEventListener('mousedown', mouseInput);
+        document.addEventListener('click', mouseInput);
     }
 }
 
