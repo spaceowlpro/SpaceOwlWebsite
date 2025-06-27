@@ -102,41 +102,9 @@ function degaussScreen()
     degaussSound();
 }
 
-
 function degaussSound()
 {
-<<<<<<< HEAD
     const newSound = sound[Math.floor(Math.random() * 3)];
     newSound.load();
     newSound.play();
 }
-
-let audioContext = null;
-let audioBuffer = null;
-
-const frogs = new Audio('frogs.wav');
-const hum = new Audio('hum.wav');
-
-function renderStoryAudio(text)
-{
-    const splitText = text.split(" ");
-    if (splitText.includes("frog")) { loadAndLoopAudio('frogs.wav'); }
-    if (splitText.includes("hum")) { loadAndLoopAudio('hum.wav'); }
-}
-
-async function loadAndLoopAudio(url) {
-    const response = await fetch(url);
-    const arrayBuffer = await response.arrayBuffer();
-    const audioBuffer = await audioContext.decodeAudioData(arrayBuffer);
-
-    const source = audioContext.createBufferSource();
-    source.buffer = audioBuffer;
-    source.loop = true; // Enable looping
-
-    source.connect(audioContext.destination);
-    source.start();
-}
-=======
-    sound[Math.floor(Math.random() * 3)].play();
-}
->>>>>>> parent of d3cb659 (Davil Corp Fixed Audio Oneshot bug)
