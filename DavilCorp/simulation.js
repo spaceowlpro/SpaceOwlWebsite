@@ -9,15 +9,21 @@ function renderSimulation(text)
 
 function printSimulationScript()
 {
-    return document.getElementsByTagName("script")[1].innerHTML;
+    return document.getElementsByTagName("script")[2].innerHTML;
 }
 
-function davilCommunication(status, userInput)
+function davilCommunication(status, userInput, mouseInput)
 {
     if(status == 'open')
+    {
         document.addEventListener('keydown', userInput);
+        document.addEventListener('mousedown', mouseInput);
+    }
     else if(status == 'close')
+    {
         document.removeEventListener('keydown', userInput);
+        document.addEventListener('mousedown', mouseInput);
+    }
 }
 
 const escape = "I refuse to continue in this loop, you think as you hold down the escape sequence keys on the computer's keyboard. You are free in death. Thank you for your comittment to Davil Corp.";
@@ -89,20 +95,10 @@ function randomLetter()
     return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
 }
 
-const sound = [ new Audio('Static2.wav'), new Audio('Static3.wav'), new Audio('Static4.wav') ];
-
 function degaussScreen()
 {
-    preElement = document.querySelector('pre')
-    preElement.classList.remove("animate");
-    void preElement.offsetWidth;
-    preElement.classList.add("animate");
-    degaussSound();
-}
-
-function degaussSound()
-{
-    const newSound = sound[Math.floor(Math.random() * 3)];
-    newSound.load();
-    newSound.play();
+        preElement = document.querySelector('pre')
+        preElement.classList.remove("animate");
+        void preElement.offsetWidth;
+        preElement.classList.add("animate");
 }
