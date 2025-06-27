@@ -1,7 +1,9 @@
 function renderSimulation(text)
 {
+    if (audioContext == null) { audioContext = new AudioContext(); audioBuffer = audioContext.createBufferSource(); audioBuffer.connect(audioContext.destination); }
     preElement = document.querySelector('pre')
     preElement.innerText = text;
+    renderStoryAudio(text);
 
     window.scroll(0,10000000)
     degaussScreen();
@@ -106,4 +108,30 @@ function degaussSound()
     const newSound = sound[Math.floor(Math.random() * 3)];
     newSound.load();
     newSound.play();
+}
+
+let audioContext = null;
+let audioBuffer = null;
+
+const frogs = new Audio('frogs.wav');
+const hum = new Audio('hum.wav');
+
+function renderStoryAudio(text)
+{
+    const splitText = text.split(" ");
+    if (splitText.includes("frog")) { loadAndLoopAudio('frogs.wav'); }
+    if (splitText.includes("hum")) { loadAndLoopAudio('hum.wav'); }
+}
+
+async function loadAndLoopAudio(url) {
+    const response = await fetch(url);
+    const arrayBuffer = await response.arrayBuffer();
+    const audioBuffer = await audioContext.decodeAudioData(arrayBuffer);
+
+    const source = audioContext.createBufferSource();
+    source.buffer = audioBuffer;
+    source.loop = true; // Enable looping
+
+    source.connect(audioContext.destination);
+    source.start();
 }
