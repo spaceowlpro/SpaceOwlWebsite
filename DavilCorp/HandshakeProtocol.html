@@ -55,17 +55,17 @@
         }
 
         function Davils_Handshake_Protocol() {
-            return new Promise((accept) => {
+            return new Promise((acceptDealTerms) => {
                 davilCommunication('open', keyboardInput, mouseInput);
                 function keyboardInput(key) {
                     if (key.key === 'Enter') {
-                        accept();
+                        acceptDealTerms();
                         davilCommunication('close', keyboardInput, mouseInput);
                     }
                 }
                 function mouseInput()
                 {
-                        accept();
+                        acceptDealTerms();
                         davilCommunication('close', keyboardInput, mouseInput);
                 }
             });
